@@ -46,7 +46,6 @@ class _DashboardState extends State<Dashboard> {
                     context,
                     MaterialPageRoute(builder: (context) => const Dashboard()),
                   );
-
                   //Navigator.pop(context);
                 },
               ),
@@ -61,7 +60,6 @@ class _DashboardState extends State<Dashboard> {
                     context,
                     MaterialPageRoute(builder: (context) => const AdicionarScreen()),
                   );
-
                   //Navigator.pop(context);
                 },
               ),
@@ -76,7 +74,6 @@ class _DashboardState extends State<Dashboard> {
                     context,
                     MaterialPageRoute(builder: (context) => const ListagemScreen()),
                   );
-
                   //Navigator.pop(context);
                 },
               ),
