@@ -13,9 +13,9 @@ class DataSource {
     return _instance;
   }
 
-  void insert(registo) => _datasource.add(registo);
+  void insert(Registo registo) => _datasource.add(registo);
 
-  List getAll() => _datasource;
+  List<Registo> getAll() => _datasource;
 
   void edit(id) {
 
