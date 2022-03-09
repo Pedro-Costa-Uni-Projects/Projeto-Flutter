@@ -3,6 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:mini_projeto/model/registo.dart';
 import 'package:mini_projeto/data/datasource.dart';
+import 'package:mini_projeto/alerts/pop_up_submit.dart';
 
 class AdicionarScreen extends StatefulWidget {
   const AdicionarScreen({Key? key}) : super(key: key);
@@ -79,8 +80,6 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                   minLines: 1,
                   maxLines: 6,
                   validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(context),
-                    FormBuilderValidators.minLength(context, 100),
                     FormBuilderValidators.maxLength(context, 200),
                   ]),
                   name: "form_observacoes",
@@ -100,9 +99,31 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                     _fbKey.currentState?.save();
                     if (_fbKey.currentState!.validate()) {
                       final formData = _fbKey.currentState?.value;
+                      //TODO: REMOVE PRINT
                       print(formData);
-                      Registo novoRegisto = Registo(formData!['form_peso'], formData['form_alimentacao'], formData['form_nota'], formData['form_observacoes']);
+
+                      double peso = double.parse(formData!['form_peso']);
+                      bool alimentacao;
+                      if(formData['form_alimentacao'] == "Sim") {
+                        alimentacao = true;
+                      } else {
+                        alimentacao = false;
+                      }
+                      int nota = formData['form_nota'].toInt();
+                      String observacoes = "";
+                      if(formData['form_observacoes'] != null) {
+                        observacoes = formData['form_observacoes'];
+                      }
+
+                      Registo novoRegisto = Registo(peso, alimentacao, nota, observacoes);
                       _dataSource.insert(novoRegisto);
+                      //TODO: REMOVE PRINT
+                      print(novoRegisto);
+
+                      showDialog(context: context,
+                        builder: (BuildContext context) => popUpSubmit(context),
+                      );
+
                     }
                 },
               ),
