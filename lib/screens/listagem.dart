@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import '../data/datasource.dart';
 
 class ListagemScreen extends StatefulWidget {
   const ListagemScreen({Key? key}) : super(key: key);
 
-  final String title = "Adicionar Registo";
+  final String title = "Listar Registos";
 
   @override
   State<ListagemScreen> createState() => _ListagemScreenState();
 }
 
 class _ListagemScreenState extends State<ListagemScreen> {
+  DataSource _dataSource = DataSource.getInstance();
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,22 @@ class _ListagemScreenState extends State<ListagemScreen> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text("Teste Listagem"),
+      body: ListView.builder(
+        itemCount: _dataSource.getAll().length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Peso: " + _dataSource.getAll()[index].peso.toString() + " kg"),
+                  subtitle: Text("Nota: " + _dataSource.getAll()[index].nota.toString() + "\n" + "Data: " + _dataSource.getAll()[index].data.toString()),
+                  isThreeLine: true,
+                ),
+              ],
+            )
+          );
+        },
       ),
-
     );
   }
 }
