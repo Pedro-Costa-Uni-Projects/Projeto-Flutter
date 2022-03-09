@@ -4,7 +4,7 @@
 2. Listagem
 3. Visualizar Detalhes
 4. Editar
-5 . Dashboard
+5. Dashboard
 
 ## Feito por: Pedro Costa - a21904825
 
