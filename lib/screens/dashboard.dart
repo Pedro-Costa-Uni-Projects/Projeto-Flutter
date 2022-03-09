@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mini_projeto/screens/adicionar.dart';
+import 'package:mini_projeto/screens/listagem.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
-  final String title = "Mini-Projeto CD - Mudar nome";
+  final String title = "Dashboard";
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -36,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
             ),
             Card(
               child: ListTile(
-                leading: Icon(Icons.add),
+                leading: Icon(Icons.home),
                 title: const Text('Dashboard'),
                 //subtitle: Text('Subtitulo Item 1'),
                 onTap: () {
@@ -55,32 +57,31 @@ class _DashboardState extends State<Dashboard> {
                 title: Text('Adicionar Registo'),
                 //subtitle: Text('Subtitulo Item 2'),
                 onTap: () {
-                  /*
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HistoricScreen()),
-                );
-                */
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AdicionarScreen()),
+                  );
+
+                  //Navigator.pop(context);
                 },
               ),
             ),
             Card(
               child: ListTile(
-                leading: Icon(Icons.add),
+                leading: Icon(Icons.list),
                 title: Text('Listar Registos'),
                 //subtitle: Text('Subtitulo Item 3'),
                 onTap: () {
-                  /*
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HistoricScreen()),
+                    MaterialPageRoute(builder: (context) => const ListagemScreen()),
                   );
-                  */
-                  Navigator.pop(context);
+
+                  //Navigator.pop(context);
                 },
               ),
             ),
+
           ],
         ),
       ),
