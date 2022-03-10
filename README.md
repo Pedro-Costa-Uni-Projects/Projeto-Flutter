@@ -3,7 +3,7 @@
 1. Adicionar - Feito
 2. Listagem - Feito
 3. Visualizar Detalhes e Eliminar - Feito com excepções também
-4. Editar
+4. Editar - Feito
 5. Dashboard
 6. Testes Unitarios
 

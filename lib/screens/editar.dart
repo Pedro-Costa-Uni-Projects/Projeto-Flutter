@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import '../alerts/pop_up_fail_delete_or_edit.dart';
+import '../alerts/pop_up_success_delete_or_edit.dart';
 import '../data/datasource.dart';
 
 class EditarScreen extends StatefulWidget {
@@ -100,7 +102,36 @@ class _EditarScreenState extends State<EditarScreen> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              MaterialButton(
+                minWidth: MediaQuery.of(context).size.width / 2,
+                child: Text("Submeter Edição", style: TextStyle(color: Colors.white),),
+                color: Colors.blue,
+                onPressed: () {
+                  _fbKey.currentState?.save();
+                  if (_fbKey.currentState!.validate()) {
+                    final formData = _fbKey.currentState?.value;
 
+                    double peso = double.parse(formData!['form_peso']);
+                    String alimentacao = formData['form_alimentacao'];
+                    int nota = formData['form_nota'].toInt();
+                    String observacoes = "";
+                    if(formData['form_observacoes'] != null) {
+                      observacoes = formData['form_observacoes'];
+                    }
+
+                    final tipoReturno = _dataSource.edit(id, peso, alimentacao, nota, observacoes);;
+                    if(tipoReturno == true) {
+                      showDialog(context: context,
+                        builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "editado"),
+                      );
+                    } else {
+                      showDialog(context: context,
+                        builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "editado", id),
+                      );
+                    }
+                  }
+                },
+              )
             ],
           )
         ],

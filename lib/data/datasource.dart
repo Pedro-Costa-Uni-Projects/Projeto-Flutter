@@ -17,15 +17,15 @@ class DataSource {
 
   List<Registo> getAll() => _datasource;
 
-  bool edit(int id, Registo novoRegisto) {
+  bool edit(int id, double peso, String alimentacao, int nota, String observacoes ) {
     final dataRegisto = _datasource[id].data;
     final dataHoje = DateTime.now();
     final diferenca = _daysBetween(dataRegisto, dataHoje);
     if(diferenca <= 7) {
-      _datasource[id].peso = novoRegisto.peso;
-      _datasource[id].alimentacao = novoRegisto.alimentacao;
-      _datasource[id].nota = novoRegisto.nota;
-      _datasource[id].observacoes = novoRegisto.observacoes;
+      _datasource[id].peso = peso;
+      _datasource[id].alimentacao = alimentacao;
+      _datasource[id].nota = nota;
+      _datasource[id].observacoes = observacoes;
       return true;
     } else {
       return false;

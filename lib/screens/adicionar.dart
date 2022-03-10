@@ -99,8 +99,6 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                     _fbKey.currentState?.save();
                     if (_fbKey.currentState!.validate()) {
                       final formData = _fbKey.currentState?.value;
-                      //TODO: REMOVE PRINT
-                      print(formData);
 
                       double peso = double.parse(formData!['form_peso']);
                       String alimentacao = formData['form_alimentacao'];
@@ -112,8 +110,6 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
 
                       Registo novoRegisto = Registo(peso, alimentacao, nota, observacoes);
                       _dataSource.insert(novoRegisto);
-                      //TODO: REMOVE PRINT
-                      print(novoRegisto);
 
                       showDialog(context: context,
                         builder: (BuildContext context) => popUpSubmit(context),
