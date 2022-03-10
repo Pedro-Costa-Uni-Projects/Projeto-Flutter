@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import '../alerts/pop_up_fail_delete_or_edit.dart';
 import '../alerts/pop_up_success_delete_or_edit.dart';
 import '../data/datasource.dart';
 
@@ -119,16 +118,12 @@ class _EditarScreenState extends State<EditarScreen> {
                       observacoes = formData['form_observacoes'];
                     }
 
-                    final tipoReturno = _dataSource.edit(id, peso, alimentacao, nota, observacoes);;
-                    if(tipoReturno == true) {
-                      showDialog(context: context,
-                        builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "editado"),
-                      );
-                    } else {
-                      showDialog(context: context,
-                        builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "editado", id),
-                      );
-                    }
+                    _dataSource.edit(id, peso, alimentacao, nota, observacoes);;
+
+                    showDialog(context: context,
+                      builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "editado"),
+                    );
+
                   }
                 },
               )

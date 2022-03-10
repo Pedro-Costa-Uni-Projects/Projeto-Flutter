@@ -4,7 +4,6 @@ import '../Format/date_formatter.dart';
 import '../alerts/pop_up_fail_delete_or_edit.dart';
 import '../alerts/pop_up_success_delete_or_edit.dart';
 import '../data/datasource.dart';
-import 'editar.dart';
 
 class ListagemScreen extends StatefulWidget {
   const ListagemScreen({Key? key}) : super(key: key);
@@ -51,15 +50,6 @@ class _ListagemScreenState extends State<ListagemScreen> {
                 )
             ),
             background: Container(
-              color: Colors.orange,
-              margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 4),
-              alignment: Alignment.centerLeft,
-              child: const Icon(
-                Icons.edit,
-                color: Colors.white,
-              ),
-            ),
-            secondaryBackground: Container(
               color: Colors.red,
               margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 4),
               alignment: Alignment.centerRight,
@@ -68,26 +58,20 @@ class _ListagemScreenState extends State<ListagemScreen> {
                 color: Colors.white,
               ),
             ),
+            direction: DismissDirection.endToStart,
             onDismissed: (direction) {
-              if(direction == DismissDirection.endToStart) {
-                setState(() {
-                  final tipoReturno = _dataSource.delete(index);
-                  if(tipoReturno == true) {
-                    showDialog(context: context,
-                      builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "eliminado"),
-                    );
-                  } else {
-                    showDialog(context: context,
-                      builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "eliminado", index),
-                    );
-                  }
-                });
-              } else if(direction == DismissDirection.startToEnd) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EditarScreen(index)),
-                );
-              }
+              setState(() {
+                final tipoReturno = _dataSource.delete(index);
+                if(tipoReturno == true) {
+                  showDialog(context: context,
+                    builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "eliminado"),
+                  );
+                } else {
+                  showDialog(context: context,
+                    builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "eliminados"),
+                  );
+                }
+              });
             },
           );
         },

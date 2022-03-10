@@ -1,4 +1,5 @@
 import 'package:mini_projeto/model/registo.dart';
+import 'package:mini_projeto/format/days_between.dart';
 
 class DataSource {
   final List<Registo> _datasource = [];
@@ -20,7 +21,7 @@ class DataSource {
   bool edit(int id, double peso, String alimentacao, int nota, String observacoes ) {
     final dataRegisto = _datasource[id].data;
     final dataHoje = DateTime.now();
-    final diferenca = _daysBetween(dataRegisto, dataHoje);
+    final diferenca = daysBetween(dataRegisto, dataHoje);
     if(diferenca <= 7) {
       _datasource[id].peso = peso;
       _datasource[id].alimentacao = alimentacao;
@@ -39,7 +40,7 @@ class DataSource {
   bool delete(int id) {
     final dataRegisto = _datasource[id].data;
     final dataHoje = DateTime.now();
-    final diferenca = _daysBetween(dataRegisto, dataHoje);
+    final diferenca = daysBetween(dataRegisto, dataHoje);
     if(diferenca <= 7) {
       _datasource.removeAt(id);
       return true;
@@ -49,14 +50,5 @@ class DataSource {
 
   }
 
-  //Ver diferança entre datas
-  //Obrigado ao user @diegoveloper do site stackoverflow.com
-  int _daysBetween(DateTime from, DateTime to) {
-    from = DateTime(from.year, from.month, from.day);
-    to = DateTime(to.year, to.month, to.day);
-    return (to
-        .difference(from)
-        .inHours / 24).round();
-  }
 
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../alerts/pop_up_fail_delete_or_edit.dart';
 import '../format/date_formatter.dart';
 import '../data/datasource.dart';
+import '../format/days_between.dart';
+import 'editar.dart';
 
 class VisualizarScreen extends StatefulWidget {
   VisualizarScreen(this.id, {Key? key});
@@ -107,6 +110,32 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
               ),
             ],
           ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            MaterialButton(
+              minWidth: MediaQuery.of(context).size.width / 2,
+              child: Text("Editar", style: TextStyle(color: Colors.white),),
+              color: Colors.orange,
+              onPressed: () {
+                final dataRegisto = _dataSource.getAll()[id].data;
+                final dataHoje = DateTime.now();
+                final diferenca = daysBetween(dataRegisto, dataHoje);
+                if(diferenca <= 7) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EditarScreen(id)),
+                  );
+                } else {
+                  showDialog(context: context,
+                    builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "editados"),
+                  );
+                }
+              },
+            ),
+          ],
+         )
         ],
       ),
     );
