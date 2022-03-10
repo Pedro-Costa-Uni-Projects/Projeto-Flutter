@@ -1,7 +1,7 @@
 # Mini Projeto Flutter - CM
 
 1. Adicionar - Feito
-2. Listagem - Feito Ver Data e Ir para Detalhes
+2. Listagem - Feito
 3. Visualizar Detalhes e Eliminar
 4. Editar
 5. Dashboard

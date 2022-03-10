@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini_projeto/screens/visualizar.dart';
 import '../data/datasource.dart';
+import 'package:intl/intl.dart';
 
 class ListagemScreen extends StatefulWidget {
   const ListagemScreen({Key? key}) : super(key: key);
@@ -29,8 +31,16 @@ class _ListagemScreenState extends State<ListagemScreen> {
               children: [
                 ListTile(
                   title: Text("Peso: " + _dataSource.getAll()[index].peso.toString() + " kg"),
-                  subtitle: Text("Nota: " + _dataSource.getAll()[index].nota.toString() + "\n" + "Data: " + _dataSource.getAll()[index].data.toString()),
+                  subtitle: Text("Bem-estar: " + _dataSource.getAll()[index].nota.toString()
+                      + "\n" +
+                      "Data: " + formatter9000(_dataSource.getAll()[index].data)),
                   isThreeLine: true,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => VisualizarScreen(index)),
+                    );
+                  },
                 ),
               ],
             )
@@ -39,4 +49,8 @@ class _ListagemScreenState extends State<ListagemScreen> {
       ),
     );
   }
+}
+
+String formatter9000(DateTime data) {
+  return DateFormat('dd/MM/yyyy - HH:mm').format(data);
 }

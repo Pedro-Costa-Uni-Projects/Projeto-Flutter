@@ -21,7 +21,7 @@ class Main extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         FormBuilderLocalizations.delegate,
       ],
-      title: 'Flutter Demo',
+      title: 'Mini Projeto CM',
       theme: ThemeData(
         primarySwatch: Colors.green,
         highlightColor: Colors.black.withOpacity(.5),
