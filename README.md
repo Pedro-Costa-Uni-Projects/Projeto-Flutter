@@ -9,7 +9,9 @@
 ### Autoavaliação: 12
 
 ### Funcionalidades:
-![](images/tabela.png?raw=true "Tabela Funcionalidades")
+<div style="text-align:center">
+    <img src="images/tabela.png" />
+</div>.
 
 ### Screenshots:
 
