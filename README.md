@@ -18,6 +18,8 @@
 #### Menu Drawer:
 ![](images/drawer.jpg?raw=true "Menu Drawer")
 
+#### Dashboard:
+
 #### Adicionar Registo:
 ![](images/adicionar1.jpg?raw=true "Adicionar Registo")
 
