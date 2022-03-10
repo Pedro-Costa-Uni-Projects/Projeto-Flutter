@@ -9,9 +9,9 @@
 ### Autoavaliação: 12
 
 ### Funcionalidades:
-<div style="text-align:center">
-    <img src="images/tabela.png" />
-</div>.
+<p align="center">
+  <img width="600" height="200" src="images/tabela.png">
+</p>
 
 ### Screenshots:
 
