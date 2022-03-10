@@ -1,13 +1,15 @@
 # Mini Projeto Flutter - CM
 
-1. Adicionar - Feito
-2. Listagem - Feito
-3. Visualizar Detalhes e Eliminar - Feito com excepções também e swipe
-4. Editar - Feito
-5. Dashboard
-6. Testes Unitarios
+## Falta
+1. Dashboard
+2. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
+
+### Autoavaliação: 12
+
+### Funcionalidades:
+![](images/tabela.png?raw=true "Tabela Funcionalidades")
 
 ### Screenshots:
 
@@ -44,12 +46,3 @@
 ![](images/editar2.jpg?raw=true "Editar Registo")
 ![](images/editar3.jpg?raw=true "Editar Registo")
 ![](images/editar4.jpg?raw=true "Editar Registo")
-
-
-### Funcionalidades:
-
-TODO
-
-### Autoavaliação:
-
-TODO
