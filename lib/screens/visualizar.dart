@@ -41,7 +41,7 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
               Row(
                 children: [
                   Text(
-                    "Peso:",
+                    "Peso: ",
                     style: TextStyle(
                       fontSize: 25,
                     ),
@@ -73,7 +73,7 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
               Row(
                 children: [
                   Text(
-                    "Bem-estar:",
+                    "Bem-estar: ",
                     style: TextStyle(
                       fontSize: 25,
                     ),
