@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-
+import 'package:mini_projeto/alerts/pop_up_fail_delete_or_edit.dart';
+import '../format/date_formatter.dart';
+import '../alerts/pop_up_success_delete_or_edit.dart';
 import '../data/datasource.dart';
+import 'editar.dart';
 
 class VisualizarScreen extends StatefulWidget {
   VisualizarScreen(this.id, {Key? key});
+
+  //Ver Melhor Forma de Fazer
   final int id;
   final String title = "Visualizar Registo";
 
@@ -13,6 +18,8 @@ class VisualizarScreen extends StatefulWidget {
 
 class _VisualizarScreenState extends State<VisualizarScreen> {
   _VisualizarScreenState(this.id);
+
+  //Ver Melhor Forma de Fazer
   final int id;
   DataSource _dataSource = DataSource.getInstance();
 
@@ -24,9 +31,84 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text(id.toString()),
-      )
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(15),
+            children: [
+              Text(
+                "Peso: " + _dataSource.getAll()[id].peso.toString() + " kg",
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                "Nota: " + _dataSource.getAll()[id].nota.toString(),
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                "Observações:",
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                _dataSource.getAll()[id].observacoes.toString(),
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.justify,
+              ),
+              Text(
+                "Data:\n" + formatter9000(_dataSource.getAll()[id].data),
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              MaterialButton(
+                child: Text("Editar", style: TextStyle(color: Colors.white),),
+                color: Colors.orange,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EditarScreen(id)),
+                  );
+                },
+              ),
+              MaterialButton(
+                child: Text("Eliminar", style: TextStyle(color: Colors.white),),
+                color: Colors.red,
+                onPressed: () {
+                  final tipoReturno = _dataSource.delete(id);
+                  if(tipoReturno == true) {
+                    showDialog(context: context,
+                      builder: (BuildContext context) => popUpSuccessDeleteOrEdit(context, "eliminado"),
+                    );
+                  } else {
+                    showDialog(context: context,
+                      builder: (BuildContext context) => popUpFailDeleteOrEdit(context, "eliminado", id),
+                    );
+                  }
+                },
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

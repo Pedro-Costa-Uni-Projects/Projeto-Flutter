@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../screens/dashboard.dart';
+import 'package:mini_projeto/screens/dashboard.dart';
 
-Widget popUpSubmit(BuildContext context) {
+Widget popUpSuccessDeleteOrEdit(BuildContext context, String tipo) {
   return AlertDialog(
     actionsAlignment: MainAxisAlignment.center,
-    title: const Text('O seu registo foi submetido com sucesso.', textAlign: TextAlign.center,),
+    title: Text('O registo selecionado foi $tipo com sucesso.', textAlign: TextAlign.center,),
     actions: <Widget>[
       TextButton(
         onPressed: () {

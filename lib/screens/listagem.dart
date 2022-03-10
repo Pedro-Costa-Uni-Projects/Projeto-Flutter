@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_projeto/screens/visualizar.dart';
+import '../Format/date_formatter.dart';
 import '../data/datasource.dart';
-import 'package:intl/intl.dart';
 
 class ListagemScreen extends StatefulWidget {
   const ListagemScreen({Key? key}) : super(key: key);
@@ -49,8 +49,4 @@ class _ListagemScreenState extends State<ListagemScreen> {
       ),
     );
   }
-}
-
-String formatter9000(DateTime data) {
-  return DateFormat('dd/MM/yyyy - HH:mm').format(data);
 }

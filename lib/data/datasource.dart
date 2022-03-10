@@ -17,12 +17,46 @@ class DataSource {
 
   List<Registo> getAll() => _datasource;
 
-  void edit(id) {
+  bool edit(int id, Registo novoRegisto) {
+    final dataRegisto = _datasource[id].data;
+    final dataHoje = DateTime.now();
+    final diferenca = _daysBetween(dataRegisto, dataHoje);
+    if(diferenca <= 7) {
+      _datasource[id].peso = novoRegisto.peso;
+      _datasource[id].alimentacao = novoRegisto.alimentacao;
+      _datasource[id].nota = novoRegisto.nota;
+      _datasource[id].observacoes = novoRegisto.observacoes;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  Registo visualize(int id) {
+    return _datasource[id];
+  }
+
+  bool delete(int id) {
+    final dataRegisto = _datasource[id].data;
+    final dataHoje = DateTime.now();
+    final diferenca = _daysBetween(dataRegisto, dataHoje);
+    if(diferenca <= 7) {
+      _datasource.removeAt(id);
+      return true;
+    } else {
+      return false;
+    }
 
   }
 
-  void visualize(id) {
-
+  //Ver diferança entre datas
+  //Obrigado ao user @diegoveloper do site stackoverflow.com
+  int _daysBetween(DateTime from, DateTime to) {
+    from = DateTime(from.year, from.month, from.day);
+    to = DateTime(to.year, to.month, to.day);
+    return (to
+        .difference(from)
+        .inHours / 24).round();
   }
 
 }
