@@ -38,26 +38,29 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
             shrinkWrap: true,
             padding: const EdgeInsets.all(15),
             children: [
-              Text(
-                "Peso:",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-                textAlign: TextAlign.center,
+              Row(
+                children: [
+                  Text(
+                    "Peso:",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    _dataSource.getAll()[id].peso.toString() + " kg",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                _dataSource.getAll()[id].peso.toString() + " kg",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
               Text(
                 "Alim. nas ultimas 3 horas?:",
                 style: TextStyle(
                   fontSize: 25,
                 ),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
               ),
               Text(
                 _dataSource.getAll()[id].alimentacao.toString(),
@@ -66,26 +69,30 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Text(
-                "Bem-estar:",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-                textAlign: TextAlign.center,
+              Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
+              Row(
+                children: [
+                  Text(
+                    "Bem-estar:",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    _dataSource.getAll()[id].nota.toString(),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                _dataSource.getAll()[id].nota.toString(),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
               Text(
                 "Observações:",
                 style: TextStyle(
                   fontSize: 25,
                 ),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
               ),
               Text(
                 _dataSource.getAll()[id].observacoes.toString(),
@@ -94,20 +101,24 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                 ),
                 textAlign: TextAlign.left,
               ),
-              Text(
-                "Data:",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-                textAlign: TextAlign.center,
+              Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
+              Row(
+                children: [
+                  Text(
+                    "Data: ",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    formatter9000(_dataSource.getAll()[id].data),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                formatter9000(_dataSource.getAll()[id].data),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
             ],
           ),
         Row(
