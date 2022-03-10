@@ -1,6 +1,6 @@
 class Registo {
   double peso;
-  bool alimentacao;
+  String alimentacao;
   int nota;
   String observacoes;
   DateTime data = DateTime.now();

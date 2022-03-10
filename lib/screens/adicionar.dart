@@ -103,12 +103,7 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                       print(formData);
 
                       double peso = double.parse(formData!['form_peso']);
-                      bool alimentacao;
-                      if(formData['form_alimentacao'] == "Sim") {
-                        alimentacao = true;
-                      } else {
-                        alimentacao = false;
-                      }
+                      String alimentacao = formData['form_alimentacao'];
                       int nota = formData['form_nota'].toInt();
                       String observacoes = "";
                       if(formData['form_observacoes'] != null) {
