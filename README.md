@@ -1,7 +1,7 @@
 # Mini Projeto Flutter - CM
 
 ## Falta
-1. Dashboard
+1. Dashboard - funções feitas falta chamalas no dashboard e gráfico
 2. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
