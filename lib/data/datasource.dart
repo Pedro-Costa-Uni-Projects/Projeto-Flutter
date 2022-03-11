@@ -1,8 +1,9 @@
 import 'package:mini_projeto/model/registo.dart';
 import 'package:mini_projeto/format/days_between.dart';
+import 'dados.dart';
 
 class DataSource {
-  final List<Registo> _datasource = [];
+  final List<Registo> _datasource = preCarregados();
   static DataSource _instance = DataSource._internal();
 
   DataSource._internal();
@@ -14,7 +15,7 @@ class DataSource {
     return _instance;
   }
 
-  void insert(Registo registo) => _datasource.add(registo);
+  void insert(Registo registo) => _datasource.insert(0, registo);
 
   List<Registo> getAll() => _datasource;
 
@@ -22,7 +23,7 @@ class DataSource {
     final dataRegisto = _datasource[id].data;
     final dataHoje = DateTime.now();
     final diferenca = daysBetween(dataRegisto, dataHoje);
-    if(diferenca <= 7) {
+    if(diferenca < 7) {
       _datasource[id].peso = peso;
       _datasource[id].alimentacao = alimentacao;
       _datasource[id].nota = nota;
@@ -41,7 +42,7 @@ class DataSource {
     final dataRegisto = _datasource[id].data;
     final dataHoje = DateTime.now();
     final diferenca = daysBetween(dataRegisto, dataHoje);
-    if(diferenca <= 7) {
+    if(diferenca < 7) {
       _datasource.removeAt(id);
       return true;
     } else {
@@ -50,6 +51,7 @@ class DataSource {
 
   }
 
+  //Testada Manualmente
   String funAverageWeight7Days() {
     double total = 0.0;
     int count = 0;
@@ -57,7 +59,7 @@ class DataSource {
     if(_datasource.isNotEmpty) {
       for(var object in _datasource) {
         final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca <= 7) {
+        if(diferenca < 7) {
           count++;
           total += object.peso;
         }
@@ -68,6 +70,7 @@ class DataSource {
     }
   }
 
+  //Testada Manualmente
   String funAverageWeight30Days() {
     double total = 0.0;
     int count = 0;
@@ -75,7 +78,7 @@ class DataSource {
     if(_datasource.isNotEmpty) {
       for(var object in _datasource) {
         final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca <= 30) {
+        if(diferenca < 30) {
           count++;
           total += object.peso;
         }
@@ -86,24 +89,7 @@ class DataSource {
     }
   }
 
-  double _funAverageWeight1and7Days() {
-    double total = 0.0;
-    int count = 0;
-    final dataHoje = DateTime.now();
-    if(_datasource.isNotEmpty) {
-      for(var object in _datasource) {
-        final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca >= 0 && diferenca <= 7 ) {
-          count++;
-          total += object.peso;
-        }
-      }
-      return total / count;
-    } else {
-      return 0.0;
-    }
-  }
-
+  //Testada Manualmente
   double _funAverageWeight8and15Days() {
     double total = 0.0;
     int count = 0;
@@ -111,7 +97,7 @@ class DataSource {
     if(_datasource.isNotEmpty) {
       for(var object in _datasource) {
         final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca >= 8 && diferenca <= 15 ) {
+        if(diferenca >= 7 && diferenca < 15 ) {
           count++;
           total += object.peso;
         }
@@ -122,9 +108,10 @@ class DataSource {
     }
   }
 
+  //Testada Manualmente
   String funAverageWeightChangeOverTheLast7Days() {
     final Vfinal = _funAverageWeight8and15Days();
-    final Vinicial = _funAverageWeight1and7Days();
+    final Vinicial = double.parse(funAverageWeight7Days());
     final toReturn = (((Vfinal - Vinicial) / Vinicial) * 100).toStringAsFixed(2);
     if(toReturn == "NaN") {
       return "0.0";
@@ -132,6 +119,7 @@ class DataSource {
     return toReturn;
   }
 
+  //Testada Manualmente
   String funAverageNote7days() {
     double total = 0.0;
     int count = 0;
@@ -139,7 +127,7 @@ class DataSource {
     if(_datasource.isNotEmpty) {
       for(var object in _datasource) {
         final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca <= 7) {
+        if(diferenca < 7) {
           count++;
           total += object.nota.toDouble();
         }
@@ -150,6 +138,7 @@ class DataSource {
     }
   }
 
+  //Testada Manualmente
   String funAverageNote30days() {
     double total = 0.0;
     int count = 0;
@@ -157,7 +146,7 @@ class DataSource {
     if(_datasource.isNotEmpty) {
       for(var object in _datasource) {
         final diferenca = daysBetween(object.data, dataHoje);
-        if(diferenca <= 30) {
+        if(diferenca < 30) {
           count++;
           total += object.nota.toDouble();
         }
@@ -170,7 +159,7 @@ class DataSource {
 
   String funFirstWeight() {
     if(_datasource.isNotEmpty) {
-      return _datasource[0].peso.toStringAsFixed(2);
+      return _datasource[_datasource.length - 1].peso.toStringAsFixed(2);
     } else {
       return "0.0";
     }
@@ -178,7 +167,7 @@ class DataSource {
 
   String funLastWeight() {
     if(_datasource.isNotEmpty) {
-      return _datasource[_datasource.length - 1].peso.toStringAsFixed(2);
+      return _datasource[0].peso.toStringAsFixed(2);
     } else {
       return "0.0";
     }
@@ -191,7 +180,7 @@ class DataSource {
       if(size <= 15) {
         toReturn = _datasource;
       } else {
-        toReturn = _datasource.sublist(size - 15, size -1);
+        toReturn = _datasource.sublist(0, 15);
       }
     }
     return toReturn;

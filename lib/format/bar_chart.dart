@@ -2,7 +2,6 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import '../data/datasource.dart';
 import '../model/registo.dart';
-import '../format/date_formatter.dart';
 
 class BarChart extends StatelessWidget {
 
@@ -12,7 +11,7 @@ class BarChart extends StatelessWidget {
       charts.Series(
         id: "pezo",
         data: DataSource.getInstance().funDataForGraphLast15(),
-        domainFn: (Registo registo, _) => (formatter9000(registo.data)),
+        domainFn: (Registo registo, _) => (registo.data.day.toString() + "\n/\n" + registo.data.month.toString()),
         measureFn: (Registo registo, _) => registo.peso,
         colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
       )
