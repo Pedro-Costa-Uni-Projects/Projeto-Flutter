@@ -74,6 +74,8 @@
 <p align="center">
   <img src="images/editar1.jpg">
   <img src="images/editar2.jpg">
+</p>
+<p align="center">
   <img src="images/editar3.jpg">
   <img src="images/editar4.jpg">
 </p>
