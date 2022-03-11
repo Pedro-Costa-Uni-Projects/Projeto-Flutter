@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_projeto/screens/adicionar.dart';
 import 'package:mini_projeto/screens/listagem.dart';
+import 'package:mini_projeto/data/datasource.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -21,8 +22,39 @@ class _DashboardState extends State<Dashboard> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text("Teste"),
+      body: DefaultTextStyle(
+        style: Theme.of(context).textTheme.bodyText2!,
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints viewportConstraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: viewportConstraints.maxHeight,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment:  MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      // A fixed-height child.
+                      color: const Color(0xffeeee00), // Yellow
+                      height: 120.0,
+                      alignment: Alignment.center,
+                      child: const Text('Fixed Height Content'),
+                    ),
+                    Container(
+                      // Another fixed-height child.
+                      color: const Color(0xff008000), // Green
+                      height: 120.0,
+                      alignment: Alignment.center,
+                      child: const Text('Fixed Height Content'),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
+        ),
       ),
       drawer: Drawer(
         child: ListView(
