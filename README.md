@@ -1,9 +1,8 @@
 # Mini Projeto Flutter - CM
 
 ## Falta
-1. Adicionar dados pré-definidos
-2. Novos Screenshots
-3. Testes Unitarios
+1. Novos Screenshots
+2. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
 
