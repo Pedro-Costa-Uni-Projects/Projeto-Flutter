@@ -43,7 +43,8 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                   Text(
                     "Peso: ",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -55,19 +56,22 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                 ],
               ),
               Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
-              Text(
-                "Alim. nas ultimas 3 horas?:",
-                style: TextStyle(
-                  fontSize: 25,
-                ),
-                textAlign: TextAlign.left,
-              ),
-              Text(
-                _dataSource.getAll()[id].alimentacao.toString(),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-                textAlign: TextAlign.center,
+              Row(
+                children: [
+                  Text(
+                    "Alim. nas ultimas 3 horas: ",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    _dataSource.getAll()[id].alimentacao.toString(),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
               Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
               Row(
@@ -75,7 +79,8 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                   Text(
                     "Bem-estar: ",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -90,16 +95,15 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
               Text(
                 "Observações:",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.left,
               ),
               Text(
                 _dataSource.getAll()[id].observacoes.toString(),
                 style: TextStyle(
                   fontSize: 20,
                 ),
-                textAlign: TextAlign.left,
               ),
               Container(height: 1, width: MediaQuery.of(context).size.width, color: Colors.black87,),
               Row(
@@ -107,7 +111,8 @@ class _VisualizarScreenState extends State<VisualizarScreen> {
                   Text(
                     "Data: ",
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(

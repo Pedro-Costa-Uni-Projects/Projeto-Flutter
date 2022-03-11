@@ -14,6 +14,7 @@
 </p>
 
 ### Screenshots:
+#####(Fotos retiradas em diferentes dias, data do registo no listar pode ser diferente do visualizar, por essa razão, não problema da app)
 
 #### Menu Drawer:
 ![](images/drawer.jpg?raw=true "Menu Drawer")
