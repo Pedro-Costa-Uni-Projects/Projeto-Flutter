@@ -6,7 +6,7 @@
 
 ## Feito por: Pedro Costa - a21904825
 
-### Autoavaliação: 12
+### Autoavaliação: 18
 
 ### Funcionalidades:
 <p align="center">
