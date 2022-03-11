@@ -34,7 +34,7 @@ class _ListagemScreenState extends State<ListagemScreen> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Text("Peso: " + _dataSource.getAll()[index].peso.toString() + " kg"),
+                      title: Text("Peso: " + _dataSource.getAll()[index].peso.toString() + " Kg"),
                       subtitle: Text("Bem-estar: " + _dataSource.getAll()[index].nota.toString()
                           + "\n" +
                           "Data: " + formatter9000(_dataSource.getAll()[index].data)),

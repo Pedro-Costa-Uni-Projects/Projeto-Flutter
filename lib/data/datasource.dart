@@ -50,7 +50,7 @@ class DataSource {
 
   }
 
-  double averageWeight7Days() {
+  String funAverageWeight7Days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -62,13 +62,13 @@ class DataSource {
           total += object.peso;
         }
       }
-      return total / count;
+      return (total / count).toStringAsFixed(2);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  double averageWeight30Days() {
+  String funAverageWeight30Days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -80,13 +80,13 @@ class DataSource {
           total += object.peso;
         }
       }
-      return total / count;
+      return (total / count).toStringAsFixed(2);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  double _averageWeight1and7Days() {
+  double _funAverageWeight1and7Days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -104,7 +104,7 @@ class DataSource {
     }
   }
 
-  double _averageWeight8and15Days() {
+  double _funAverageWeight8and15Days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -122,14 +122,17 @@ class DataSource {
     }
   }
 
-  double averageWeightChangeOverTheLast7Days() {
-    final Vfinal = _averageWeight8and15Days();
-    final Vinicial = _averageWeight1and7Days();
-
-    return double.parse((((Vfinal - Vinicial) / Vinicial) * 100).toStringAsFixed(2));
+  String funAverageWeightChangeOverTheLast7Days() {
+    final Vfinal = _funAverageWeight8and15Days();
+    final Vinicial = _funAverageWeight1and7Days();
+    final toReturn = (((Vfinal - Vinicial) / Vinicial) * 100).toStringAsFixed(2);
+    if(toReturn == "NaN") {
+      return "0.0";
+    }
+    return toReturn;
   }
 
-  double averageNote7days() {
+  String funAverageNote7days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -141,13 +144,13 @@ class DataSource {
           total += object.nota.toDouble();
         }
       }
-      return total / count;
+      return (total / count).toStringAsFixed(1);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  double averageNote30days() {
+  String funAverageNote30days() {
     double total = 0.0;
     int count = 0;
     final dataHoje = DateTime.now();
@@ -159,29 +162,29 @@ class DataSource {
           total += object.nota.toDouble();
         }
       }
-      return total / count;
+      return (total / count).toStringAsFixed(1);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  double firstWeight() {
+  String funFirstWeight() {
     if(_datasource.isNotEmpty) {
-      return _datasource[0].peso;
+      return _datasource[0].peso.toStringAsFixed(2);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  double lastWeight() {
+  String funLastWeight() {
     if(_datasource.isNotEmpty) {
-      return _datasource[_datasource.length - 1].peso;
+      return _datasource[_datasource.length - 1].peso.toStringAsFixed(2);
     } else {
-      return 0.0;
+      return "0.0";
     }
   }
 
-  List<Registo> dataForGraphLast15() {
+  List<Registo> funDataForGraphLast15() {
     List<Registo> toReturn = [];
     if(_datasource.isNotEmpty) {
       int size = _datasource.length;
