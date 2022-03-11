@@ -181,4 +181,17 @@ class DataSource {
     }
   }
 
+  List<Registo> dataForGraphLast15() {
+    List<Registo> toReturn = [];
+    if(_datasource.isNotEmpty) {
+      int size = _datasource.length;
+      if(size <= 15) {
+        toReturn = _datasource;
+      } else {
+        toReturn = _datasource.sublist(size - 15, size -1);
+      }
+    }
+    return toReturn;
+  }
+
 }
