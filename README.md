@@ -55,17 +55,29 @@
 
 #### Listar Registos - Eliminar sem Sucesso:
 ##### Nota: Foi forçado o erro mudando a condição para o contrário.
-![](images/listar4.jpg?raw=true "Listar Registos - Eliminar sem Sucesso")
+<p align="center">
+  <img src="images/listar4.jpg">
+</p>
 
 #### Visualizar Registo:
-![](images/visualizar1.jpg?raw=true "Visualizar Registo")
+<p align="center">
+  <img src="images/visualizar1.jpg">
+</p>
 
 #### Visualizar Registo - Não Pode Editar:
 ##### Nota: Foi forçado o erro mudando a condição para o contrário.
-![](images/visualizar2.jpg?raw=true "Visualizar Registo - Não Pode Editar")
+<p align="center">
+  <img src="images/visualizar2.jpg">
+</p>
 
 #### Editar Registo:
 ![](images/editar1.jpg?raw=true "Editar Registo")
 ![](images/editar2.jpg?raw=true "Editar Registo")
 ![](images/editar3.jpg?raw=true "Editar Registo")
 ![](images/editar4.jpg?raw=true "Editar Registo")
+<p align="center">
+  <img src="images/editar1.jpg">
+  <img src="images/editar2.jpg">
+  <img src="images/editar3.jpg">
+  <img src="images/editar4.jpg">
+</p>
