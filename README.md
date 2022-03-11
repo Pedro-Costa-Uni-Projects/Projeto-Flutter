@@ -1,7 +1,7 @@
 # Mini Projeto Flutter - CM
 
 ## Falta
-1. Dashboard - funções feitas falta chamalas no dashboard e gráfico
+1. Dashboard - funções feitas falta chamar no dashboard e gráfico
 2. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
@@ -20,6 +20,7 @@
 ![](images/drawer.jpg?raw=true "Menu Drawer")
 
 #### Dashboard:
+![](images/tabela.png?raw=true "Menu Drawer")
 
 #### Adicionar Registo:
 ![](images/adicionar1.jpg?raw=true "Adicionar Registo")
