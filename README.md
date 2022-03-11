@@ -18,7 +18,7 @@
 
 #### Menu Drawer:
 <p align="center">
-  <img width="600" height="200" src="drawer.jpg">
+  <img src="drawer.jpg">
 </p>
 
 #### Dashboard:
