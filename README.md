@@ -10,7 +10,7 @@
 
 ### Funcionalidades:
 <p align="center">
-  <img width="600" height="200" src="images/tabela.png">
+  <img src="images/tabela.png">
 </p>
 
 ### Screenshots:
@@ -23,18 +23,29 @@
 
 #### Dashboard:
 ![](images/tabela.png?raw=true "Menu Drawer")
+<p align="center">
+  <img src="images/drawer.jpg">
+</p>
 
 #### Adicionar Registo:
-![](images/adicionar1.jpg?raw=true "Adicionar Registo")
+<p align="center">
+  <img src="images/adicionar1.jpg">
+</p>
 
 #### Adicionar Registo - Campos Vazios:
-![](images/adicionar2.jpg?raw=true "Adicionar Registo - Campos Vazios")
+<p align="center">
+  <img src="images/adicionar2.jpg">
+</p>
 
 #### Adicionar Registo - Pop Up:
-![](images/adicionar3.jpg?raw=true "Adicionar Registo - Pop Up")
+<p align="center">
+  <img src="images/adicionar3.jpg">
+</p>
 
 #### Listar Registos:
-![](images/listar1.jpg?raw=true "Listar Registos")
+<p align="center">
+  <img src="images/listar1.jpg">
+</p>
 
 #### Listar Registos - Eliminar com Sucesso:
 ![](images/listar2.jpg?raw=true "Listar Registos - Eliminar com Sucesso")
