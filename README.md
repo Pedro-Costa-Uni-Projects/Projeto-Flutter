@@ -17,7 +17,9 @@
 ##### Nota: Fotos retiradas em diferentes dias, data do registo no listar pode ser diferente do visualizar, por essa razão, não problema da app em si.
 
 #### Menu Drawer:
-![](images/drawer.jpg?raw=true "Menu Drawer")
+<p align="center">
+  <img width="600" height="200" src="drawer.jpg">
+</p>
 
 #### Dashboard:
 ![](images/tabela.png?raw=true "Menu Drawer")
