@@ -71,10 +71,6 @@
 </p>
 
 #### Editar Registo:
-![](images/editar1.jpg?raw=true "Editar Registo")
-![](images/editar2.jpg?raw=true "Editar Registo")
-![](images/editar3.jpg?raw=true "Editar Registo")
-![](images/editar4.jpg?raw=true "Editar Registo")
 <p align="center">
   <img src="images/editar1.jpg">
   <img src="images/editar2.jpg">
