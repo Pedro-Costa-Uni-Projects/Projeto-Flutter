@@ -14,7 +14,7 @@
 </p>
 
 ### Screenshots:
-##### Nota: Fotos retiradas em diferentes dias, data do registo no listar pode ser diferente do visualizar, por essa razão, não problema da app em si
+##### Nota: Fotos retiradas em diferentes dias, data do registo no listar pode ser diferente do visualizar, por essa razão, não problema da app em si.
 
 #### Menu Drawer:
 ![](images/drawer.jpg?raw=true "Menu Drawer")
@@ -38,14 +38,14 @@
 ![](images/listar3.jpg?raw=true "Listar Registos - Eliminar com Sucesso")
 
 #### Listar Registos - Eliminar sem Sucesso:
-##### Nota: Foi forçado o erro mudando a condição para o contrário
+##### Nota: Foi forçado o erro mudando a condição para o contrário.
 ![](images/listar4.jpg?raw=true "Listar Registos - Eliminar sem Sucesso")
 
 #### Visualizar Registo:
 ![](images/visualizar1.jpg?raw=true "Visualizar Registo")
 
 #### Visualizar Registo - Não Pode Editar:
-##### Nota: Foi forçado o erro mudando a condição para o contrário
+##### Nota: Foi forçado o erro mudando a condição para o contrário.
 ![](images/visualizar2.jpg?raw=true "Visualizar Registo - Não Pode Editar")
 
 #### Editar Registo:
