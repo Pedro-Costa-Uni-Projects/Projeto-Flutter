@@ -48,8 +48,10 @@
 </p>
 
 #### Listar Registos - Eliminar com Sucesso:
-![](images/listar2.jpg?raw=true "Listar Registos - Eliminar com Sucesso")
-![](images/listar3.jpg?raw=true "Listar Registos - Eliminar com Sucesso")
+<p align="center">
+  <img src="images/listar2.jpg">
+  <img src="images/listar3.jpg">
+</p>
 
 #### Listar Registos - Eliminar sem Sucesso:
 ##### Nota: Foi forçado o erro mudando a condição para o contrário.
