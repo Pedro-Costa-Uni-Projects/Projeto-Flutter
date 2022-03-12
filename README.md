@@ -6,7 +6,7 @@
 
 ## Feito por: Pedro Costa - a21904825
 
-### Autoavaliação: 18
+### Autoavaliação: 17
 
 ### Funcionalidades:
 <p align="center">
@@ -16,7 +16,6 @@
 ### Screenshots:
 
 #### Dashboard:
-![](images/tabela.png?raw=true "Menu Drawer")
 <p align="center">
   <img src="images/dashboard1.jpg">
   <img src="images/dashboard2.jpg">
