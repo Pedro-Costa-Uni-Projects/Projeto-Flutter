@@ -1,8 +1,7 @@
 # Mini Projeto Flutter - CM
 
-## Falta
-1. Novos Screenshots
-2. Testes Unitarios
+## Falta Fazer
+1. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
 
