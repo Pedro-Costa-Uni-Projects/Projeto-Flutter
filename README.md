@@ -14,17 +14,17 @@
 </p>
 
 ### Screenshots:
-##### Nota: Fotos retiradas em diferentes dias, data do registo no listar pode ser diferente do visualizar, por essa razão, não problema da app em si.
-
-#### Menu Drawer:
-<p align="center">
-  <img src="images/drawer.jpg">
-</p>
 
 #### Dashboard:
 ![](images/tabela.png?raw=true "Menu Drawer")
 <p align="center">
-  <img src="images/drawer.jpg">
+  <img src="images/dashboard1.jpg">
+  <img src="images/dashboard2.jpg">
+</p>
+
+#### Menu Drawer:
+<p align="center">
+  <img src="images/drawer1.jpg">
 </p>
 
 #### Adicionar Registo:
@@ -54,7 +54,6 @@
 </p>
 
 #### Listar Registos - Eliminar sem Sucesso:
-##### Nota: Foi forçado o erro mudando a condição para o contrário.
 <p align="center">
   <img src="images/listar4.jpg">
 </p>
@@ -65,12 +64,15 @@
 </p>
 
 #### Visualizar Registo - Não Pode Editar:
-##### Nota: Foi forçado o erro mudando a condição para o contrário.
 <p align="center">
   <img src="images/visualizar2.jpg">
 </p>
 
 #### Editar Registo:
+##### 1 - Registo Original
+##### 2 - Registo Modificado
+##### 3 - Mensagem de Sucesso
+##### 4 - Verificado que foi modificado
 <p align="center">
   <img src="images/editar1.jpg">
   <img src="images/editar2.jpg">
