@@ -34,6 +34,7 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
               children: <Widget>[
                 FormBuilderTextField(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Qual o seu peso?',
                   ),
                   keyboardType: TextInputType.number,
@@ -45,6 +46,7 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                 ),
                 FormBuilderDropdown(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Alimentou-se nas últimas 3 horas?',
                   ),
                   items: ['Sim', 'Não']
@@ -58,6 +60,7 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                 ),
                 FormBuilderSlider(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                       labelText: 'Como se sente hoje?',
                       labelStyle: TextStyle(
                         fontSize: 22.0,
@@ -74,6 +77,7 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                 ),
                 FormBuilderTextField(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Observações (Entre 100 a 200 caracteres)',
                   ),
                   keyboardType: TextInputType.multiline,

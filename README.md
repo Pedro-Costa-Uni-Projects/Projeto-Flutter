@@ -1,8 +1,7 @@
 # Mini Projeto Flutter - CM
 
 ## Falta Fazer
-1. Fazer Editar Outravez
-2. Testes Unitarios
+1. Testes Unitarios
 
 ## Feito por: Pedro Costa - a21904825
 
