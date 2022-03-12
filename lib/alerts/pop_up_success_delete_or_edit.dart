@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_projeto/screens/dashboard.dart';
+
+import '../screens/dashboard.dart';
 
 Widget popUpSuccessDeleteOrEdit(BuildContext context, String tipo) {
   return AlertDialog(
@@ -8,11 +9,15 @@ Widget popUpSuccessDeleteOrEdit(BuildContext context, String tipo) {
     actions: <Widget>[
       TextButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Dashboard()),
-          );
-          //Navigator.pop(context);
+          if(tipo == "editado") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Dashboard()),
+            );
+          } else {
+            Navigator.pop(context);
+          }
+
         },
         child: const Text('Fechar'),
       ),
