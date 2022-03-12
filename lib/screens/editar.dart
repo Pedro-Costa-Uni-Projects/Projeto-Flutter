@@ -40,6 +40,7 @@ class _EditarScreenState extends State<EditarScreen> {
               children: <Widget>[
                 FormBuilderTextField(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Qual o seu peso?',
                   ),
                   keyboardType: TextInputType.number,
@@ -52,6 +53,7 @@ class _EditarScreenState extends State<EditarScreen> {
                 ),
                 FormBuilderDropdown(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Alimentou-se nas últimas 3 horas?',
                   ),
                   items: ['Sim', 'Não']
@@ -66,6 +68,7 @@ class _EditarScreenState extends State<EditarScreen> {
                 ),
                 FormBuilderSlider(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Como se sente hoje?',
                     labelStyle: TextStyle(
                       fontSize: 22.0,
@@ -82,6 +85,7 @@ class _EditarScreenState extends State<EditarScreen> {
                 ),
                 FormBuilderTextField(
                   decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
                     labelText: 'Observações (Entre 100 a 200 caracteres)',
                   ),
                   keyboardType: TextInputType.multiline,
