@@ -25,7 +25,7 @@ class BarChart extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                "Útimos 15 registos de peso",
+                "Últimos 15 registos de peso",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
