@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mini_projeto/screens/dashboard.dart';
@@ -20,6 +21,7 @@ class Main extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         FormBuilderLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       title: 'Mini Projeto CM',
       theme: ThemeData(
