@@ -1,8 +1,5 @@
 # Mini Projeto Flutter - CM
 
-## Falta Fazer
-1. Testes Unitarios
-
 ## Feito por: Pedro Costa - a21904825
 
 ### Autoavaliação: 17
@@ -30,7 +27,7 @@
   <img src="images/adicionar1.jpg">
 </p>
 
-#### Adicionar Registo - Campos Vazios:
+#### Adicionar Registo - Campos Vazios (Peso também tem como validadores mínimo 0, máximo 1000, e duas casas decimas):
 <p align="center">
   <img src="images/adicionar2.jpg">
 </p>
