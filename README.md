@@ -27,7 +27,7 @@
   <img src="images/adicionar1.jpg">
 </p>
 
-#### Adicionar Registo - Campos Vazios (Peso também tem como validadores mínimo 0, máximo 1000, e duas casas decimas):
+#### Adicionar Registo - Campos Vazios (Peso também tem como validadores mínimo 0, máximo 1000, e duas casas decimais):
 <p align="center">
   <img src="images/adicionar2.jpg">
 </p>
