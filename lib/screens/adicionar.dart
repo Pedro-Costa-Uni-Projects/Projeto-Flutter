@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:mini_projeto/model/registo.dart';
@@ -38,9 +39,14 @@ class _AdicionarScreenState extends State<AdicionarScreen> {
                     labelText: 'Qual o seu peso?',
                   ),
                   keyboardType: TextInputType.number,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,2}')),
+                  ],
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(context),
                     FormBuilderValidators.numeric(context),
+                    FormBuilderValidators.min(context, 0),
+                    FormBuilderValidators.max(context, 1000),
                   ]),
                   name: "form_peso",
                 ),
