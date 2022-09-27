@@ -2,7 +2,8 @@
 
 ## Avaliação Final: 18
 
-### Descrição: Projeto feito no âmbito da cadeira de computação móvel, tendo como objetivo criar uma aplicação móvel para permitir que os utilizadores acompanhem o seu peso registado diariamente, realizada com a framework Flutter.
+### Descrição: 
+Projeto feito no âmbito da cadeira de computação móvel, tendo como objetivo criar uma aplicação móvel para permitir que os utilizadores acompanhem o seu peso registado diariamente, realizada com a framework Flutter.
 
 ## Feito por: Pedro Costa - a21904825
 
